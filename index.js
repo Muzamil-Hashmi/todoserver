@@ -1,11 +1,12 @@
 import express from 'express'
 import apiRoutes from './routes/api.js';
 import sequelize from './utils/sequelize.js'
+import cors from 'cors'
 
 const app = express();
 const Port = 8000;
 app.use(express.json());
-
+app.use(cors())
 sequelize
   .authenticate()
   .then(() => {
